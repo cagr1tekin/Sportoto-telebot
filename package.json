@@ -1,0 +1,32 @@
+{
+  "name": "sportoto-telebot",
+  "version": "1.0.0",
+  "description": "Sportoto bahis analizi ve otomasyonu için Telegram bot",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "dev": "nodemon backend/src/index.js",
+    "start": "node backend/src/index.js",
+    "db:setup": "node backend/scripts/dbSetup.js",
+    "api:test": "node backend/scripts/testApi.js"
+  },
+  "keywords": [
+    "sportoto",
+    "telegram",
+    "bot",
+    "betting",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "axios": "^1.12.2",
+    "dotenv": "^16.3.1",
+    "node-cron": "^4.2.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
