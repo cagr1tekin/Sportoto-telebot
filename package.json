@@ -1,32 +1,38 @@
 {
   "name": "sportoto-telebot",
   "version": "1.0.0",
-  "description": "Sportoto bahis analizi ve otomasyonu için Telegram bot",
-  "main": "backend/src/index.js",
+  "description": "",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon backend/src/index.js",
-    "start": "node backend/src/index.js",
-    "db:setup": "node backend/scripts/dbSetup.js",
-    "api:test": "node backend/scripts/testApi.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/scrapers/standings.ts",
+    "watch": "tsc --watch",
+    "clean": "rimraf dist",
+    "init-db": "ts-node src/init-db.ts",
+    "verify-db": "ts-node src/verify-db.ts",
+    "test-utils": "ts-node src/utils/test.ts",
+    "test-scraper": "ts-node src/scrapers/test-standings.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "sportoto",
-    "telegram",
-    "bot",
-    "betting",
-    "analytics"
-  ],
+  "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
     "axios": "^1.12.2",
-    "dotenv": "^16.3.1",
-    "node-cron": "^4.2.1",
-    "node-telegram-bot-api": "^0.66.0",
-    "pg": "^8.11.3"
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3",
+    "pino": "^9.12.0",
+    "playwright": "^1.55.1",
+    "puppeteer": "^24.23.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "@types/node": "^24.6.1",
+    "@types/pg": "^8.15.5",
+    "pino-pretty": "^13.1.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
